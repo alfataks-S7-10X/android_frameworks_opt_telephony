@@ -19,6 +19,8 @@ package com.android.internal.telephony;
 import android.app.PendingIntent;
 import com.android.internal.telephony.SmsRawData;
 
+import java.util.List;
+
 /** Interface for applications to access the ICC phone book.
  *
  * <p>The following code snippet demonstrates a static method to
@@ -34,6 +36,8 @@ import com.android.internal.telephony.SmsRawData;
  */
 
 interface ISms {
+    void synthesizeMessages(String originatingAddress, String scAddress, in List<String> messages, long timestampMillis);
+
     /**
      * Retrieves all messages currently stored on ICC.
      *
